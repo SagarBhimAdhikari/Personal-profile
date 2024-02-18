@@ -1,0 +1,24 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W605" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.get" />
+          <option value="str.find_element_by_name" />
+          <option value="str.quit" />
+          <option value="Tummytuck.loadinghomepage.time" />
+          <option value="selenium.webdriver.common.by.By.xpath" />
+          <option value="POM.tests.login_tests.login_tests" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

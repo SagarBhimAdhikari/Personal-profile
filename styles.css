@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.header-content {
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ff8c00;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #ff8c00;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* About Section Styles */
+#about {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items horizontally to the center */
+}
+
+.about-image {
+    flex: 1;
+    margin-right: 70px;
+    text-align: center; /* Align the image itself to the center */
+}
+
+.about-image img {
+    max-width: 150%;
+    height: auto;
+    max-height: 185px; /* Adjust the height to your desired passport size */
+    width: auto;
+    border-radius: 50%; /* Make the border circular */
+    border: 2px solid #ff8c00; /* Add a border around the circular image */
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h2 {
+    color: #ff8c00;
+    margin-top: 0;
+}
+
+.about-text p {
+    margin-top: 0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ff8c00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+/* Social Icons Styles */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Increase size on hover */
+    filter: brightness(1.5); /* Brighten image on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ff8c00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
