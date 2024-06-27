@@ -54,6 +54,7 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: prj_F7WPgRDUi3fNsVHUQRMh0Q4K3xj0
+          VERCEL_ORG_ID: team_rVXn4IOxY6GndQDKdErr254m
         run: |
           npm install -g vercel
-          vercel --token $VERCEL_TOKEN --prod --yes --build-env VERCEL_URL=https://personal-profile-gold-delta.vercel.app/
+          vercel --token $VERCEL_TOKEN --prod --yes --build-env VERCEL_URL=https://personal-profile-gold-delta.vercel.app/ --env VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID --env VERCEL_ORG_ID=$VERCEL_ORG_ID
