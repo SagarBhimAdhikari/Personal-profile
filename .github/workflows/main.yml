@@ -22,6 +22,7 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
+        if: always()  # Example condition, replace with your actual condition
         run: npm install
 
   lint:
@@ -37,14 +38,9 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Change to project directory
-        run: cd $GITHUB_WORKSPACE  # Change to the root of the repository
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Run linter
-        run: npm run lint
+        if: success()  # Example condition, replace with your actual condition
+        run: npm --prefix $GITHUB_WORKSPACE run lint
 
   test:
     runs-on: ubuntu-latest
@@ -59,14 +55,8 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Change to project directory
-        run: cd $GITHUB_WORKSPACE  # Change to the root of the repository
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Run tests
-        run: npm test
+        run: npm --prefix $GITHUB_WORKSPACE test
 
   deploy:
     runs-on: ubuntu-latest
@@ -82,13 +72,8 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Change to project directory
-        run: cd $GITHUB_WORKSPACE  # Change to the root of the repository
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Deploy to Vercel
+        if: always()  # Example condition, replace with your actual condition
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: prj_F7WPgRDUi3fNsVHUQRMh0Q4K3xj0
