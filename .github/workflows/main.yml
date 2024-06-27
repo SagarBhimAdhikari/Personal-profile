@@ -22,8 +22,9 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        if: always()  # Example condition, replace with your actual condition
-        run: npm install
+        run: |
+          cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
+          npm install
 
   lint:
     runs-on: ubuntu-latest
@@ -40,7 +41,9 @@ jobs:
 
       - name: Run linter
         if: success()  # Example condition, replace with your actual condition
-        run: npm --prefix $GITHUB_WORKSPACE run lint
+        run: |
+          cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
+          npm run lint
 
   test:
     runs-on: ubuntu-latest
@@ -56,7 +59,9 @@ jobs:
           node-version: '14'
 
       - name: Run tests
-        run: npm --prefix $GITHUB_WORKSPACE test
+        run: |
+          cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
+          npm test
 
   deploy:
     runs-on: ubuntu-latest
@@ -80,4 +85,5 @@ jobs:
           VERCEL_ORG_ID: team_rVXn4IOxY6GndQDKdErr254m   # Replace with your actual Vercel Team ID
         run: |
           npm install -g vercel
+          cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
           vercel --token $VERCEL_TOKEN --prod --confirm --env VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID --env VERCEL_ORG_ID=$VERCEL_ORG_ID
