@@ -37,11 +37,11 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Change to project directory
+        run: cd $GITHUB_WORKSPACE  # Change to the root of the repository
+
       - name: Install dependencies
         run: npm install
-
-      - name: Change to project directory
-        run: cd Personal-profile  # Replace with your project directory if it's different
 
       - name: Run linter
         run: npm run lint
@@ -59,11 +59,11 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Change to project directory
+        run: cd $GITHUB_WORKSPACE  # Change to the root of the repository
+
       - name: Install dependencies
         run: npm install
-
-      - name: Change to project directory
-        run: cd Personal-profile  # Replace with your project directory if it's different
 
       - name: Run tests
         run: npm test
@@ -82,11 +82,11 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Change to project directory
+        run: cd $GITHUB_WORKSPACE  # Change to the root of the repository
+
       - name: Install dependencies
         run: npm install
-
-      - name: Change to project directory
-        run: cd Personal-profile  # Replace with your project directory if it's different
 
       - name: Deploy to Vercel
         env:
