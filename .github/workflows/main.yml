@@ -90,7 +90,6 @@ jobs:
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         VERCEL_PROJECT_ID: prj_F7WPgRDUi3fNsVHUQRMh0Q4K3xj0
-
       run: |
         npm install -g vercel
-        vercel --token $VERCEL_TOKEN --prod --confirm --project-id $VERCEL_PROJECT_ID 
+        vercel --token $VERCEL_TOKEN --prod --confirm --env VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID
