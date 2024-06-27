@@ -26,11 +26,9 @@ jobs:
           cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
           npm install
 
- 
-
   test:
     runs-on: ubuntu-latest
-    needs: lint
+    needs: build
 
     steps:
       - name: Checkout repository
@@ -42,7 +40,7 @@ jobs:
           node-version: '14'
 
       - name: Run tests
-        if: success()  # Condition for running only if linting succeeds
+        if: success()  # Condition for running only if build succeeds
         run: |
           cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
           # Replace with your actual test command, for example:
@@ -63,12 +61,4 @@ jobs:
           node-version: '14'
 
       - name: Deploy to Vercel
-        if: always()  # Example condition, replace with your actual condition
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: OfH0wO6Rmr6llSRLaW6HE8oY  # Replace with your actual Vercel Project ID
-          VERCEL_ORG_ID: team_rVXn4IOxY6GndQDKdErr254m   # Replace with your actual Vercel Team ID
-        run: |
-          npm install -g vercel
-          cd $GITHUB_WORKSPACE  # Navigate to the root directory of the repository
-          vercel --token $VERCEL_TOKEN --prod --confirm --env VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID --env VERCEL_ORG_ID=$VERCEL_ORG_ID --build-env VERCEL_URL=https://personal-profile-gold-delta.vercel.app/
+        if: always()  # Example condition, replace w
