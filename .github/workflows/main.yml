@@ -40,6 +40,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Change to project directory
+        run: cd Personal-profile  # Replace with your project directory if it's different
+
       - name: Run linter
         run: npm run lint
 
@@ -58,6 +61,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Change to project directory
+        run: cd Personal-profile  # Replace with your project directory if it's different
 
       - name: Run tests
         run: npm test
@@ -78,6 +84,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Change to project directory
+        run: cd Personal-profile  # Replace with your project directory if it's different
 
       - name: Deploy to Vercel
         env:
